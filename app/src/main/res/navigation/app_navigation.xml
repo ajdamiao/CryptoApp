@@ -14,4 +14,19 @@
         android:id="@+id/splashScreenFragment"
         android:name="com.example.cryptoapp.view.SplashScreenFragment"
         android:label="SplashScreenFragment" />
+    <fragment
+        android:id="@+id/cryptoDetailsFragment"
+        android:name="com.example.cryptoapp.view.CryptoDetailsFragment"
+        android:label="fragment_crypto_details"
+        tools:layout="@layout/fragment_crypto_details" />
+    <fragment
+        android:id="@+id/converterFragment"
+        android:name="com.example.cryptoapp.view.ConverterFragment"
+        android:label="fragment_converter"
+        tools:layout="@layout/fragment_converter" />
+    <fragment
+        android:id="@+id/portifolioFragment"
+        android:name="com.example.cryptoapp.view.PortfolioFragment"
+        android:label="fragment_portifolio"
+        tools:layout="@layout/fragment_portfolio" />
 </navigation>

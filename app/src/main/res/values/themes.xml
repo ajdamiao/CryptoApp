@@ -13,4 +13,87 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <!-- Home Fragment Alert Dialog Customization -->
+    <style name="AlertDialogTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="materialAlertDialogTitleTextStyle">@style/TitleTextStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/AlertDialogPositiveButtonStyle</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/AlertDialogBodyTextStyle</item>
+    </style>
+
+    <style name="TitleTextStyle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="AlertDialogBodyTextStyle" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="AlertDialogBodyTextStyleGrey" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
+        <item name="android:textColor">@color/white_25</item>\
+    </style>
+
+    <style name="AlertDialogPositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/orange</item>
+    </style>
+    <!-- END HOME Fragment Alert Dialog Customization -->
+
+
+    <!-- Check In Dialog -->
+    <style name="Field.Input.Layout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:layout_marginStart">40dp</item>
+        <item name="android:layout_marginEnd">40dp</item>
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="errorIconDrawable">@null</item>
+    </style>
+
+    <style name="checkInAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="materialAlertDialogTitleTextStyle">@style/AlertDialogTitleTextStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/AlertDialogPositiveButtonStyleBenefit</item>
+        <item name="buttonBarNegativeButtonStyle">@style/AlertDialogNegativeButtonStyleBenefit</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/CheckInAlertDialogBodyTextStyle</item>
+    </style>
+
+    <style name="AlertDialogTitleTextStyle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="AlertDialogThemeBenefit" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="materialAlertDialogTitleTextStyle">@style/TitleTextStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/AlertDialogPositiveButtonStyleBenefit</item>
+        <item name="buttonBarNegativeButtonStyle">@style/AlertDialogNegativeButtonStyleBenefit</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/AlertDialogBodyTextStyle</item>
+    </style>
+
+    <style name="CheckInAlertDialogBodyTextStyle" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="AlertDialogPositiveButtonStyleBenefit" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="AlertDialogNegativeButtonStyleBenefit" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/purple_500</item>
+    </style>
+    <!--End Check In Dialog-->
+
+    <!-- Spinner Edit -->
+    <style name="spinner_style">
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:dropDownWidth">50dp</item>
+        <item name="android:showDividers">none</item>
+        <item name="android:dividerHeight">0dp</item>
+        <item name="backgroundColor">@color/black_75</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:dropDownHeight">30dp</item>
+        <item name="android:scrollbarAlwaysDrawVerticalTrack">true</item>
+        <item name="android:dropDownSelector">@color/black</item>
+    </style>
+    <!-- END Spinner Edit -->
+
+
 </resources>

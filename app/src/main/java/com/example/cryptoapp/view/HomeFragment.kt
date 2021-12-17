@@ -1,11 +1,15 @@
 package com.example.cryptoapp.view
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.example.cryptoapp.MainActivity
 import com.example.cryptoapp.R
 import com.example.cryptoapp.databinding.FragmentHomeBinding
 import com.example.cryptoapp.model.Crypto
@@ -23,6 +27,32 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         homeViewModel.getCryptos()
         cryptoResponse()
+        refreshCryptosAdapter()
+
+        val main = activity as MainActivity
+
+        main.changeToolbarText("Cryptos")
+        main.setToolbarBackButtonInvisible()
+    }
+
+    private fun refreshCryptosAdapter() {
+        val swipeRefreshView = binding.swipeRefresh
+        swipeRefreshView.setOnChildScrollUpCallback(object : SwipeRefreshLayout.OnChildScrollUpCallback{
+            override fun canChildScrollUp(parent: SwipeRefreshLayout, child: View?): Boolean {
+                if(binding.rviewCrypto != null) {
+                    return binding.rviewCrypto.canScrollVertically(-1)
+                }
+                return false
+            }
+        })
+
+        swipeRefreshView.setOnRefreshListener {
+            val handler = Handler(Looper.getMainLooper())
+            handler.postDelayed({
+                homeViewModel.getCryptos()
+                swipeRefreshView.isRefreshing = false
+            },2000)
+        }
     }
 
     private fun cryptoResponse() {
